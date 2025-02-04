@@ -1,0 +1,12 @@
+The following CSS rule is causing unexpected behavior because of the specificity conflict:
+
+```css
+div p {
+  color: blue;
+}
+p {
+  color: red;
+}
+```
+
+The second rule (`p { color: red; }`) is more specific than the first rule (`div p { color: blue; }`) and will override the first rule. The resulting text color will be red, even if the `p` tag is inside a `div` tag.
