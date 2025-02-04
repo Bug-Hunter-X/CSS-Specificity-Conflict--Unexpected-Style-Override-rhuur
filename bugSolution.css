@@ -1,0 +1,31 @@
+Several solutions exist to address this specificity issue. 
+
+**Solution 1 (Preferred): Increase Specificity**
+
+If you intend for the paragraph within the div to be blue, make the selector more specific, overriding the `p` selector:
+
+```css
+div > p {
+  color: blue;
+}
+p {
+  color: red;
+}
+```
+
+The `>` ensures that only direct children of `div` are affected.
+
+**Solution 2 (Less Preferred): Using `!important`**
+
+Using `!important` is generally discouraged because it can make CSS harder to maintain and debug.  Use this solution cautiously and only as a last resort:
+
+```css
+div p {
+  color: blue !important;
+}
+p {
+  color: red;
+}
+```
+
+This forces the `color: blue;` rule to take precedence.
